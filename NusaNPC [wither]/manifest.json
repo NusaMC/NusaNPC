@@ -1,0 +1,45 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "§aNusa§bNPC §e[wither]",
+		"description": "§bhttps://discord.gg/naRZ8tE3yC §afor more updates and information!",
+		"uuid": "d40cbe6b-aca7-4838-a75f-e6acbe74f6f9",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			21,
+			31
+		]
+	},
+	"modules": [
+		{
+            "description": "behavior",
+			"type": "data",
+			"uuid": "665f6cbc-dfea-4894-8b7c-a17ad7394288",
+			"version": [ 1, 0, 0 ]
+		},
+		{
+            "description": "script",
+            "language": "javascript",
+            "type": "script",
+            "uuid": "ccac95ca-8dee-4293-8e85-38d774975d2b",
+            "version": [ 1, 0, 0 ],
+            "entry": "scripts/main.js"
+        }
+	],
+	"dependencies": [
+		{
+            "module_name": "@minecraft/server",
+            "version": "1.18.0"
+        }
+	],
+    "metadata": {
+        "authors": [ "ItzCandra23 (github.com/ItzCandra23)" ],
+        "license": "GNU General Public License v3.0",
+        "url": "https://www.gnu.org/licenses/"
+    }
+}

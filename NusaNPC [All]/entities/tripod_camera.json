@@ -1,0 +1,130 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "minecraft:tripod_camera",
+            "is_spawnable": false,
+            "is_summonable": false,
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "tripodcamera",
+                    "inanimate",
+                    "mob"
+                ]
+            },
+            "minecraft:health": {
+                "value": 4,
+                "max": 4
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/empty.json"
+            },
+            "minecraft:collision_box": {
+                "width": 0.75,
+                "height": 1.8
+            },
+            "minecraft:physics": {},
+            "minecraft:conditional_bandwidth_optimization": {}
+        },
+        "component_groups": {
+            "default.components": {
+                "minecraft:type_family": {
+                    "family": [
+                        "tripodcamera",
+                        "inanimate",
+                        "mob"
+                    ]
+                },
+                "minecraft:health": {
+                    "value": 4,
+                    "max": 4
+                },
+                "minecraft:hurt_on_condition": {
+                    "damage_conditions": [
+                        {
+                            "filters": {
+                                "test": "in_lava",
+                                "subject": "self",
+                                "operator": "==",
+                                "value": true
+                            },
+                            "cause": "lava",
+                            "damage_per_tick": 4
+                        }
+                    ]
+                },
+                "minecraft:loot": {
+                    "table": "loot_tables/empty.json"
+                },
+                "minecraft:collision_box": {
+                    "width": 0.75,
+                    "height": 1.8
+                },
+                "minecraft:physics": {},
+                "minecraft:conditional_bandwidth_optimization": {}
+            },
+            "npc.components": {
+                "minecraft:damage_sensor": {
+                    "triggers": {
+                        "cause": "all",
+                        "deals_damage": "no"
+                    }
+                },
+                "minecraft:type_family": {
+                    "family": [
+                        "npc",
+                        "mob"
+                    ]
+                },
+                "minecraft:fire_immune": true,
+                "minecraft:loot": {
+                    "table": "loot_tables/empty.json"
+                },
+                "minecraft:persistent": {},
+                "minecraft:nameable": {
+                    "always_show": true,
+                    "allow_name_tag_renaming": false
+                },
+                "minecraft:physics": {},
+                "minecraft:behavior.float": {
+                    "priority": 0
+                },
+                "minecraft:collision_box": {
+                    "width": 0.75,
+                    "height": 1.8
+                }
+            }
+        },
+        "events": {
+            "nusa:npc": {
+                "remove": {
+                    "component_groups": [
+                        "default.components"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "npc.components"
+                    ]
+                }
+            }
+        }
+    }
+}
